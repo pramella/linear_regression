@@ -1,6 +1,9 @@
 # Linear Regression Example
 
-This is an example of linear regression.joblib==0.13.2
+This is an example of linear regression.
+
+The requirements for Python are the following
+joblib==0.13.2
 numpy==1.17.2
 pandas==0.25.1
 patsy==0.5.1
