@@ -14,11 +14,13 @@ def simulate_data(nobs):
     RETURNS
         data (dict) contains X, y, and beta vectors.
     """
-    X = np.matrix(np.random.randn(nobs))
-    beta = np.matrix(np.random.random(2))
-    return(np.size(X),np.size(beta))
-    #y = np.dot(X,beta)
-    #return(X,y,beta)
+    X = np.random.randn(nobs).reshape(nobs,1)
+    X0 = np.ones((nobs,1))
+    beta = np.matrix(np.random.random(2).reshape(2,1))
+    #return(np.size(X),np.size(beta))
+    X = np.matrix(np.hstack((X0,X)))
+    y = np.dot(np.matrix(X),np.matrix(beta))
+    return(X,y,beta)
 
 
 def compare_models():
